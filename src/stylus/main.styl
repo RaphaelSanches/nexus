@@ -1,50 +1,240 @@
+
+/*--------------------- Mixins ---------------------*/
+fortransition()
+	-webkit-transition arguments
+	-moz-transition arguments
+	-o-transition arguments
+	transition arguments
+
 /*--------------------- Variáveis ---------------------*/
 
-//main_color1 = #d80000
+nexus_red = #d80000
+dark-grey = #a5a5a5
+med-grey = #cecece
+light-grey = #F3F3F3
+
 
 /*--------------------- Estilos ---------------------*/
 
-.ctr{
+.ctr
 	margin 0 auto
-}
 
-/*--------------------- Estruturas ---------------------*/
+.space-top
+	margin-top 30px
 
-.header{
+.space-bottom
+	margin-bottom 30px
+
+
+
+/*--------------------- Globais - afetam (quase) todas as páginas ---------------------*/
+
+*,:after,:before
+	-webkit-box-sizing:border-box
+	-moz-box-sizing:border-box
+	box-sizing:border-box
+
+::-webkit-scrollbar 
+	background: med-grey;
+
+
+body
+	background light-grey
+
+
+.header
 	width 100%
 	height 100px
-	position fixed
-}
 
-.container{
-	width: 1200px;
+
+.container
+	width: 1060px
+	height auto
 	@extends .ctr
-}
 
-.logo{
-	margin-top: 20px;
-}
 
-.banner-home{
+.logo
+	margin-top 23px
+	float left
+	
+.nav-main
+	height auto
+	float right
+	margin-top 38px
+		
+	/* item do menu dp topo */
+	.nav-main-item
+		margin 0px
+		float left
+		background #000
+		margin 0px 20px
+		padding 2px 8px
+		position relative
+		font-size 20px
+		
+		a
+			color #fff
+			padding 6px 0px
+		
+		/* efeito "pontiagudo" do menu */
+		&:before
+			content ""
+			width 0
+			height 0
+			position absolute
+			left -20px
+			bottom 0px
+			border-bottom 27px solid #000
+			border-left 20px solid transparent
+		
+		/* efeito "pontiagudo" do menu */
+		&:after
+			content ""
+			width 0
+			height 0
+			position absolute
+			right -20px
+			top 0px
+			border-top 27px solid #000
+			border-right 20px solid transparent
+		
+		
+
+		
+/*--------------------- Estruturas ---------------------*/
+
+		/*--------------------- Home -----------------------*/
+			
+.banner-home
 	width 100%
-	height 585px
-	//min-height 700px
-	background #ccc
+	height auto
+	min-height 585px
+	background med-grey
 	margin-bottom 50px
-}
 
-.nav-home{
-	width 1200px
+
+.nav-home
+	width 1060px
 	height auto
 	min-height 142px
 	display flex
 	justify-content: space-around
 	
-	ul li{
+	.nav-home-item
 		float left
-		width 279px
-		height 142px
-		background #000
+		width 245px
+		height 175px
+		background dark-grey
 		margin 0 10px
-	}
+
+
+
+		/*--------------------- Experimentos - individual -----------------------*/
+
+/* div que possui as principais informações do experimento da página*/
+.main-experimento
+	width 772px
+	float left
+	padding-bottom 80px
+
+/* banner com a imagem principal do experimento */
+.banner-experimento
+	width: 100%
+	height 434px
+	background med-grey
+	margin-bottom 30px
+	position relative
+	overflow hidden
+	
+	img
+		width 100%
+		
+	h2
+		min-width: 606px
+		padding: 10px
+		position absolute
+		bottom 0
+		left 0
+		margin 20px 0px 0px 0px
+		font-size 40px
+		background nexus_red
+		color #fff
+		font-family "Planer"
+
+	
+		&:after{
+			content ""
+			width 90%
+			height 10px
+			position absolute
+			top -10px
+			left 0
+			background #000
+		}
+
+.texto-experimento{
+	width 100%
+	padding 40px 60px 
+	color #000
 }
+
+/* div que possui as principais informações do experimento */
+.aside-experimento
+	width 215px
+	float right
+	
+/* aside que possui a foto do autor e nome */
+.info-autor
+	width 100%
+	/* imagem do autor */
+	img
+		width 100%
+		height auto
+	
+	/* nome do autor */	
+	h3
+		width 100%
+		text-align center
+		padding 5px 0px
+		background nexus_red
+		color #fff
+		font-family "Planer"
+
+		
+.galeria-experimento
+	width 100%
+	margin-top 74px
+	
+	h3{
+		font-family "Planer"
+		width 100%
+		text-align center
+		color #000
+		font-size 30px
+	    margin 10px 0px
+	    padding 0px
+	}
+		
+	.wrap-img
+		width 107.5px
+		height 107.50px
+		float left
+		overflow hidden
+		position relative
+		fortransition all 0.5s ease 0s
+
+		&:hover img
+			width 350px
+			top -65%
+			left -65%
+			fortransition all 0.5s ease 0s
+
+				
+		img
+			width 250px
+			height auto
+			position absolute
+			top -40%
+			left -40%
+			fortransition all 0.5s ease 0s
+	

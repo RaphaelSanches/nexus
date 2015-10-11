@@ -88,6 +88,7 @@ template {
 
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 
 /**
@@ -399,8 +400,11 @@ th {
 /* ---------------------------------------------------- MY RESET */
 ul{
   padding: 0;
+  margin: 0;
 }
 
 li{
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
