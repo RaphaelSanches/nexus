@@ -103,6 +103,39 @@ body
 		
 /*--------------------- Estruturas ---------------------*/
 
+		/*--------------------- REUTILIZAVEIS -----------------------*/
+			
+
+// Box de texto com os cantos com detalhes em vermelho
+.box-texto-corner
+	width 100%
+	padding 60px 60px 
+	color #000
+	position relative
+	
+	&:before{
+		content " "
+		background url(../../src/img/corner.svg) no-repeat
+		position absolute
+		left 0px
+		bottom -20px
+		width 195px
+		height 195px
+	}
+	
+	&:after{
+		content " "
+		background url(../../src/img/corner.svg) no-repeat
+		position absolute
+		top -20px
+		right 0px
+		transform rotate(180deg)
+		width 195px
+		height 195px
+	}
+	
+
+
 		/*--------------------- Home -----------------------*/
 			
 .banner-home
@@ -157,19 +190,17 @@ body
 	img
 		width 100%
 		
-	h2
+	.container-titulo-experimento
 		min-width: 606px
 		padding: 10px
 		position absolute
 		bottom 0
 		left 0
 		margin 20px 0px 0px 0px
-		font-size 40px
 		background nexus_red
 		color #fff
 		font-family "Planer"
-
-	
+		
 		&:after{
 			content ""
 			width 90%
@@ -179,12 +210,37 @@ body
 			left 0
 			background #000
 		}
+		
+		h2
+			font-size 40px
+			color #fff
+			position relative
+			padding 0
+			margin 0px
+			
+			&:before
+			&:after{
+				content attr(data-text)
+				position absolute
+				top 0
+				left 0
+				width 100%
+				height 100%
+				color #fff
+			}
+		
+			&:before
+				left 3px
+				text-shadow -3px 0 black
+				background nexus_red //importante ser o mesmo da div
+			
+			
+			&:after
+				left -3px
+				text-shadow -2px 0 blue
+				clip: rect(44px, 450px, 56px, 0);
+				background nexus_red //importante ser o mesmo da div
 
-.texto-experimento{
-	width 100%
-	padding 40px 60px 
-	color #000
-}
 
 /* div que possui as principais informações do experimento */
 .aside-experimento
