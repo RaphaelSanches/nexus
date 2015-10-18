@@ -33,7 +33,7 @@ module.exports = function( grunt ) {
     stylus : {
       compile : {
         files : {
-          'assets/css/style.css': 'src/stylus/main.styl', // 1:1 compile 
+          'assets/css/style.css': 'src/stylus/*.styl' // 1:1 compile 
           //'path/to/style.css': ['path/to/sources/*.styl', 'path/to/more/*.styl'] // compile and concat into single file 
         }
       }

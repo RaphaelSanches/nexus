@@ -8,24 +8,42 @@ fortransition()
 
 /*--------------------- Variáveis ---------------------*/
 
+
+/* Cores */
 nexus_red = #d80000
 dark-grey = #a5a5a5
 med-grey = #cecece
 light-grey = #F3F3F3
 
+/* Espaçamentos */
+
+space = 10px
+
+/* Ex: margin-left space*5 */
 
 /*--------------------- Estilos ---------------------*/
 
 .ctr
 	margin 0 auto
+	
+/* Corrige a altura de elementos pai com elementos filhos que possuem float */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
 
-.space-top
-	margin-top 30px
+.cf:after {
+    clear: both;
+}
 
-.space-bottom
-	margin-bottom 30px
-
-
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    zoom: 1;
+}
 
 /*--------------------- Globais - afetam (quase) todas as páginas ---------------------*/
 
@@ -45,13 +63,18 @@ body
 .header
 	width 100%
 	height 100px
+	position fixed
+	z-index: 2
+
+	&.header-interno
+		position static
+		margin-bottom space*3
 
 
 .container
 	width: 1060px
 	height auto
 	@extends .ctr
-
 
 .logo
 	margin-top 23px
@@ -109,7 +132,8 @@ body
 // Box de texto com os cantos com detalhes em vermelho
 .box-texto-corner
 	width 100%
-	padding 60px 60px 
+	padding 60px 60px
+	margin 40px 0px
 	color #000
 	position relative
 	
@@ -133,8 +157,6 @@ body
 		width 195px
 		height 195px
 	}
-	
-
 
 		/*--------------------- Home -----------------------*/
 			
@@ -170,6 +192,93 @@ body
 			margin 0px
 			color #fff
 			font-size 20px
+			
+		/*--------------------- Artistas - individual -----------------------*/
+
+.nome-artista-individual
+	text-align right
+	color #fff
+	background nexus_red
+	width 740px
+	padding 3px 10px
+		
+.info-artista-individual
+	text-align right
+	color nexus_red
+	margin 5px 0px
+	
+	span
+		color #000
+
+.img-artista-individual
+	margin-left space*2
+	float left
+	width 300px
+	border-bottom 10px nexus_red solid
+
+.wrapper-fl-left
+	float left
+	width auto
+	max-width 740px
+	height auto
+
+.obras-artista-highlights
+	width 100%
+	margin space*5
+	
+.obras-artista-highlights-item
+	width 400px
+	height 250px
+	float left
+	position relative
+	background med-grey
+	overflow hidden
+	
+	&:first-child
+		width 600px
+		height 500px
+	
+	& img
+		width 100%
+	
+	& p
+		position absolute
+		bottom -500px
+		padding 15px
+		background rgba(0,0,0,0.8)
+		color #fff
+		margin 0px
+		fortransition all 0.9s ease 0s
+
+
+	& h3
+	&:first-child  h3
+		width auto
+		background nexus_red
+		position absolute
+		bottom 0
+		right 0
+		margin 0px
+		color #fff
+		text-align right
+		fortransition all 0.5s ease 0s
+		
+	
+	& h3
+		font-size 18px
+		padding 6px
+		
+
+	&:first-child  h3
+		font-size 28px
+		padding 10px
+		
+	
+	&:hover h3
+		bottom 200px
+	
+	&:hover p
+		bottom 0px
 		/*--------------------- Experimentos - individual -----------------------*/
 
 /* div que possui as principais informações do experimento da página*/
