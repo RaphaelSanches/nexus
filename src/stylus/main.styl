@@ -94,6 +94,8 @@ body
 		padding 2px 8px
 		position relative
 		font-size 20px
+		font-family Planer, sans-serif
+
 		
 		a
 			color #fff
@@ -158,6 +160,25 @@ body
 		height 195px
 	}
 
+.page-title
+		width 100%
+		padding: 10px
+		margin 20px 0px
+		background nexus_red
+		color #fff
+		font-family Planer, sans-serif
+		position relative
+		
+		&:after{
+		content ""
+		width 95%
+		height 10px
+		position absolute
+		bottom -10px
+		left 0
+		background #000
+		}
+		
 		/*--------------------- Home -----------------------*/
 			
 .banner-home
@@ -192,8 +213,58 @@ body
 			margin 0px
 			color #fff
 			font-size 20px
-			
-		/*--------------------- Artistas - individual -----------------------*/
+	
+		/*--------------------- Artistas - listagem -----------------------*/
+
+.artistas-list
+	margin space*4 0
+		
+.artistas-list-item
+	width 250px
+	height 367px
+	position relative
+	float left
+	margin 40px 140px
+	
+	& img
+		width 250px
+		height 312px
+		margin-bottom space*1.2
+		overflow hidden
+		
+	& h3
+		width 100%
+		padding 5px 0px
+		margin 0px
+		color #fff
+		text-align center
+		background nexus_red
+		font-family Planer, sans-serif
+		font-size 24px
+		font-weight normal
+	
+	& .info-list-item
+		position absolute
+		top 150px
+		right -50px
+		opacity 0
+		font-family Planer, sans-serif
+		color #fff
+		font-size 21px
+		fortransition all 0.2s linear 0s
+	
+	&:hover .info-list-item
+		position absolute
+		top 150px
+		right -100px
+		opacity 1
+		
+	& .info-list-item p
+		background nexus_red
+		padding 4px
+
+
+	/*--------------------- Artistas - individual -----------------------*/
 
 .nome-artista-individual
 	text-align right
@@ -308,7 +379,7 @@ body
 		margin 20px 0px 0px 0px
 		background nexus_red
 		color #fff
-		font-family "Planer"
+		font-family Planer, sans-serif
 		
 		&:after{
 			content ""
@@ -371,7 +442,7 @@ body
 		padding 5px 0px
 		background nexus_red
 		color #fff
-		font-family "Planer"
+		font-family Planer, sans-serif
 
 		
 .galeria-experimento
@@ -379,7 +450,7 @@ body
 	margin-top 74px
 	
 	h3{
-		font-family "Planer"
+		font-family Planer, sans-serif
 		width 100%
 		text-align center
 		color #000
