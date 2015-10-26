@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Planer';
+    src:url('Planer.ttf.woff') format('woff'),
+        url('Planer.ttf.svg#Planer') format('svg'),
+        url('Planer.ttf.eot'),
+        url('Planer.ttf.eot?#iefix') format('embedded-opentype'); 
+        font-weight: normal;
+        font-style: normal;
+}
 
 /*--------------------- Mixins ---------------------*/
 fortransition()
@@ -212,7 +221,8 @@ body
 			right 0
 			margin 0px
 			color #fff
-			font-size 20px
+			font-size 22px
+			font-family 'Planer'
 	
 		/*--------------------- Artistas - listagem -----------------------*/
 
@@ -243,23 +253,36 @@ body
 		font-size 24px
 		font-weight normal
 	
-	& .info-list-item
+	&:nth-child(odd) .info-list-item
+	&:nth-child(even) .info-list-item
 		position absolute
 		top 150px
-		right -50px
 		opacity 0
 		font-family Planer, sans-serif
 		color #fff
 		font-size 21px
 		fortransition all 0.2s linear 0s
 	
-	&:hover .info-list-item
+	&:nth-child(odd) .info-list-item
+		right -120px
+		
+	&:nth-child(even) .info-list-item
+		left -120px
+		
+	&:nth-child(odd):hover .info-list-item
 		position absolute
 		top 150px
-		right -100px
 		opacity 1
-		
-	& .info-list-item p
+		transform translateX(30px)
+	
+
+	&:nth-child(even):hover .info-list-item
+		position absolute
+		top 150px
+		opacity 1
+		transform translateX(-30px)
+
+	.info-list-item p
 		background nexus_red
 		padding 4px
 
@@ -272,11 +295,13 @@ body
 	background nexus_red
 	width 740px
 	padding 3px 10px
+	font-family 'Planer'
 		
 .info-artista-individual
 	text-align right
 	color nexus_red
 	margin 5px 0px
+	font-family 'Planer'
 	
 	span
 		color #000
@@ -333,6 +358,7 @@ body
 		color #fff
 		text-align right
 		fortransition all 0.5s ease 0s
+		font-family 'Planer'
 		
 	
 	& h3
@@ -344,12 +370,14 @@ body
 		font-size 28px
 		padding 10px
 		
-	
+	&:first-child:hover h3
+		transform translateY(-450px)
+
 	&:hover h3
-		bottom 200px
+		transform translateY(-217px)
 	
 	&:hover p
-		bottom 0px
+		transform translateY(-500px)
 		/*--------------------- Experimentos - individual -----------------------*/
 
 /* div que possui as principais informações do experimento da página*/
@@ -449,7 +477,7 @@ body
 	width 100%
 	margin-top 74px
 	
-	h3{
+	h3
 		font-family Planer, sans-serif
 		width 100%
 		text-align center
@@ -457,7 +485,6 @@ body
 		font-size 30px
 	    margin 10px 0px
 	    padding 0px
-	}
 		
 	.wrap-img
 		width 107.5px
