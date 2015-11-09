@@ -3,7 +3,6 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
 	<meta charset="UTF-8">
-	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	
 	<?php
@@ -14,6 +13,9 @@
 		//seleciona o banco de dados através da conexão
 		$select_db = mysql_select_db($database['database_name'], $connection) or die(mysql_error());
 	?>
+
+	<title><?php echo $titlePage ?> - Nexus</title>
+
 </head>
 <body>
 	<!-- header da página -->

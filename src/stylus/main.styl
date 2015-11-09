@@ -145,6 +145,7 @@ body
 	width 100%
 	padding 60px 60px
 	margin 40px 0px
+	min-height 220px
 	color #000
 	position relative
 	
@@ -211,7 +212,27 @@ body
 		background dark-grey
 		margin 0 10px
 		position relative
-
+		
+		&:before
+			content ""
+			width 0
+			height 0
+			position absolute
+			left 0px
+			bottom 0px
+			border-bottom 35px solid light-grey
+			border-right 35px solid transparent
+		
+		/* efeito "pontiagudo" do menu */
+		&:after
+			content ""
+			width 0
+			height 0
+			position absolute
+			right 0px
+			top 0px
+			border-top 35px solid light-grey
+			border-left  35px solid transparent
 
 		h2
 			padding 8px
@@ -252,6 +273,29 @@ body
 		font-family Planer, sans-serif
 		font-size 24px
 		font-weight normal
+		position relative
+		
+		/* efeito "pontiagudo" do menu */
+		&:before
+			content ""
+			width 0
+			height 0
+			position absolute
+			left 0px
+			bottom 0px
+			border-bottom 16px solid light-grey
+			border-right 16px solid transparent
+		
+		/* efeito "pontiagudo" do menu */
+		&:after
+			content ""
+			width 0
+			height 0
+			position absolute
+			right 0px
+			top 0px
+			border-top 16px solid light-grey
+			border-left 16px solid transparent
 	
 	&:nth-child(odd) .info-list-item
 	&:nth-child(even) .info-list-item
@@ -261,13 +305,16 @@ body
 		font-family Planer, sans-serif
 		color #fff
 		font-size 21px
+		min-width 180px
 		fortransition all 0.2s linear 0s
 	
 	&:nth-child(odd) .info-list-item
-		right -120px
+		left 230px
 		
 	&:nth-child(even) .info-list-item
-		left -120px
+		right 230px
+		text-align right
+
 		
 	&:nth-child(odd):hover .info-list-item
 		position absolute
@@ -296,6 +343,7 @@ body
 	width 740px
 	padding 3px 10px
 	font-family 'Planer'
+	margin-top 0px
 		
 .info-artista-individual
 	text-align right
@@ -378,6 +426,8 @@ body
 	
 	&:hover p
 		transform translateY(-500px)
+		
+
 		/*--------------------- Experimentos - individual -----------------------*/
 
 /* div que possui as principais informações do experimento da página*/
@@ -426,28 +476,28 @@ body
 			padding 0
 			margin 0px
 			
-			&:before
-			&:after{
-				content attr(data-text)
-				position absolute
-				top 0
-				left 0
-				width 100%
-				height 100%
-				color #fff
-			}
+			// &:before
+			// &:after{
+			// 	content attr(data-text)
+			// 	position absolute
+			// 	top 0
+			// 	left 0
+			// 	width 100%
+			// 	height 100%
+			// 	color #fff
+			// }
 		
-			&:before
-				left 3px
-				text-shadow -3px 0 black
-				background nexus_red //importante ser o mesmo da div
+			// &:before
+			// 	left 3px
+			// 	text-shadow -3px 0 black
+			// 	background nexus_red //importante ser o mesmo da div
 			
 			
-			&:after
-				left -3px
-				text-shadow -2px 0 blue
-				clip: rect(44px, 450px, 56px, 0);
-				background nexus_red //importante ser o mesmo da div
+			// &:after
+			// 	left -3px
+			// 	text-shadow -2px 0 blue
+			// 	clip: rect(44px, 450px, 56px, 0);
+			// 	background nexus_red //importante ser o mesmo da div
 
 
 /* div que possui as principais informações do experimento */
@@ -458,6 +508,7 @@ body
 /* aside que possui a foto do autor e nome */
 .info-autor
 	width 100%
+	
 	/* imagem do autor */
 	img
 		width 100%
@@ -470,7 +521,30 @@ body
 		padding 5px 0px
 		background nexus_red
 		color #fff
+		position relative
 		font-family Planer, sans-serif
+		
+		&:before
+			content ""
+			width 0
+			height 0
+			position absolute
+			left 0px
+			bottom 0px
+			border-bottom 14px solid light-grey
+			border-right 14px solid transparent
+		
+		/* efeito "pontiagudo" do menu */
+		&:after
+			content ""
+			width 0
+			height 0
+			position absolute
+			right 0px
+			top 0px
+			border-top 14px solid light-grey
+			border-left 14px solid transparent
+	
 
 		
 .galeria-experimento
