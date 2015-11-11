@@ -35,9 +35,10 @@
 		<ul class="obras-artista-highlights cf">
 			<?php 	
 
-				$obrasArtista_result = mysql_query("SELECT obras.cod_autor, obras.cod_obra, obras.nome, obras.destaque, obras.texto FROM obras WHERE obras.cod_autor = $cod_autor ORDER BY obras.destaque DESC") or die(mysql_error());
-				if($row['cod_autor'] != null){//errado
-					echo $row['cod_autor'];
+				$obrasArtista_result = mysql_query("SELECT obras.cod_obra, obras.nome, obras.destaque, obras.texto FROM obras INNER JOIN autor_x_obras ON autor_x_obras.cod_obra = obras.cod_obra WHERE autor_x_obras.cod_autor = $cod_autor ORDER BY obras.destaque DESC") or die(mysql_error());
+				$registros = mysql_num_rows($obrasArtista_result);
+
+				if($registros > 1){
 					while($row = mysql_fetch_assoc($obrasArtista_result)) { 
 				?>
 				<li class="obras-artista-highlights-item">
