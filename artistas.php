@@ -1,5 +1,5 @@
 <?php
-	$titlePage = 'Artistassada';
+	$titlePage = 'Artistas';
 	include "header-interno.php";
 
 

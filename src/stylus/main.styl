@@ -15,6 +15,13 @@ fortransition()
 	-o-transition arguments
 	transition arguments
 
+foranimation()
+	-webkit-transition arguments
+	-moz-transition arguments
+	-o-transition arguments
+	transition arguments
+
+
 /*--------------------- Variáveis ---------------------*/
 
 
@@ -72,7 +79,7 @@ body
 .header
 	width 100%
 	height 100px
-	position fixed
+	position static
 	z-index: 2
 
 	&.header-interno
@@ -194,9 +201,13 @@ body
 .banner-home
 	width 100%
 	height auto
-	background med-grey
 	margin-bottom 50px
-
+	border-bottom 5px nexus_red solid
+	border-top 5px nexus_red solid
+			
+	img{
+		width 100%
+	}
 
 .nav-home
 	width 1060px
@@ -244,6 +255,12 @@ body
 			color #fff
 			font-size 22px
 			font-family 'Planer'
+
+//Abertura
+
+.opening-background{
+
+}
 	
 		/*--------------------- Artistas - listagem -----------------------*/
 
@@ -427,7 +444,33 @@ body
 	&:hover p
 		transform translateY(-500px)
 		
-
+		/*--------------------- Experimentos - listagem -----------------------*/
+			
+.experimentos-item
+	width 530px
+	height 312px
+	background dark-grey
+	float left;
+	position relative
+	overflow hidden
+	
+	img
+		width 100%
+	
+	.experimentos-item__title
+		width auto
+		background nexus_red
+		position absolute
+		bottom 0
+		right 0
+		margin 0px
+		font-size 32px
+		color #fff
+		text-align right
+		fortransition all 0.5s ease 0s
+		font-family 'Planer'
+		padding 5px	
+	
 		/*--------------------- Experimentos - individual -----------------------*/
 
 /* div que possui as principais informações do experimento da página*/

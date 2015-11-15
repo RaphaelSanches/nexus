@@ -23,7 +23,8 @@ module.exports = function( grunt ) {
         ],
 
         tasks : [
-          'stylus'
+          'stylus',
+          // 'imagemin'
         ]
 
       }
@@ -39,13 +40,52 @@ module.exports = function( grunt ) {
       }
     },
 
+
+  // imagemin: {
+  //   png: {
+  //     options: {
+  //       optimizationLevel: 7
+  //     },
+  //     files: [
+  //       {
+  //         // Set to true to enable the following options…
+  //         expand: true,
+  //         // cwd is 'current working directory'
+  //         cwd: 'src/img/',
+  //         src: ['**/*.png'],
+  //         // Could also match cwd line above. i.e. project-directory/img/
+  //         dest: 'assets/img/'
+  //         ext: '.png'
+  //       }
+  //     ]
+  //   },
+  //   jpg: {
+  //     options: {
+  //       progressive: true
+  //     },
+  //     files: [
+  //       {
+  //         // Set to true to enable the following options…
+  //         expand: true,
+  //         // cwd is 'current working directory'
+  //         cwd: 'src/img/',
+  //         src: ['**/*.jpg'],
+  //         // Could also match cwd. i.e. project-directory/img/
+  //         dest: 'assets/img/',
+  //         ext: '.jpg'
+  //       }
+  //     ]
+  //   }
+  // }
+
+
   });
 
   // Declaração do plugin
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-stylus');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  // grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   //Tarefas a serem executadas

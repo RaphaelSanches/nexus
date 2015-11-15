@@ -42,10 +42,10 @@
 					while($row = mysql_fetch_assoc($obrasArtista_result)) { 
 				?>
 				<li class="obras-artista-highlights-item">
-					<a href="experimento-individual.html">
+					<a href="experimento-individual.php?cod_obra=<?php echo $row['cod_obra'] ?>">
 						<img src="k2.jpg">
 					</a>
-					<a href="experimento-individual.html">
+					<a href="experimento-individual.php?cod_obra=<?php echo $row['cod_obra'] ?>">
 						<h3><?php echo $row['nome']; ?></h3>
 					</a>
 

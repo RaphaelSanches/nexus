@@ -9,6 +9,7 @@
 		include "config.php";
 		// linha que estabelece a conexão
 		$connection = mysql_connect($database['server'], $database['login'], $database['senha']);
+		mysql_set_charset('UTF8', $connection);
 
 		//seleciona o banco de dados através da conexão
 		$select_db = mysql_select_db($database['database_name'], $connection) or die(mysql_error());
@@ -33,13 +34,13 @@
 						<a href="index.php" role="menuitem">Home</a>
 					</li>
 					<li class="nav-main-item" role="presentation">
-						<a href="#" role="menuitem">Sobre</a> 
+						<a href="#" role="menuitem">Arte telemática</a> 
 					</li>
 					<li class="nav-main-item" role="presentation">
 						<a href="artistas.php" role="menuitem">Artistas</a>
 					</li>
 					<li class="nav-main-item" role="presentation">
-						<a href="#">Experimentos</a>
+						<a href="experimentos.php">Experimentos</a>
 					</li>
 					<li class="nav-main-item" role="presentation">
 						<a href="#" role="menuitem">?</a>
