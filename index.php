@@ -36,7 +36,7 @@
 
 		?>		    
 			<a href="<?php echo $row['link_url'] ?>">
- 				<!-- <h1><?php echo $row['titulo'] ?> </h1> -->
+ 				<h1><?php echo $row['titulo'] ?> </h1>
  				<img src="assets/img/content/<?php echo $row['image_url'] ?>">
  			</a>
 		<?php } ?>
@@ -45,17 +45,18 @@
 	<!-- Navegaçãp logo abaixo do banner -->
 	<nav class="nav-home ctr">
 		<ul>
+
+			<a href="#" class="nav-home-item">
+				<h2>Arte Telemática</h2>
+			</a>
 			<a href="artistas.php" class="nav-home-item">
 				<h2>Artistas</h2>
 			</a>
-			<a href="#" class="nav-home-item">
-				<h2>Oi oi oi</h2>
+			<a href="experimentos.php" class="nav-home-item">
+				<h2>Experimentos</h2>
 			</a>
 			<a href="#" class="nav-home-item">
-				<h2>Oi oi oi</h2>
-			</a>
-			<a href="#" class="nav-home-item">
-				<h2>Oi oi oi</h2>
+				<h2>O Nexus</h2>
 			</a>
 		</ul>
 	</nav>

@@ -29,7 +29,7 @@
 				</p>
 			</div>
 			
-			<img class="img-artista-individual" src="k1.jpg" width="300">			
+			<img class="img-artista-individual" src="assets/img/content/autor/<?php echo $row['img_url'] ?>" width="300">
 		</article>
 		
 		<ul class="obras-artista-highlights cf">
@@ -38,7 +38,7 @@
 				$obrasArtista_result = mysql_query("SELECT obras.cod_obra, obras.nome, obras.destaque, obras.texto FROM obras INNER JOIN autor_x_obras ON autor_x_obras.cod_obra = obras.cod_obra WHERE autor_x_obras.cod_autor = $cod_autor ORDER BY obras.destaque DESC") or die(mysql_error());
 				$registros = mysql_num_rows($obrasArtista_result);
 
-				if($registros > 1){
+				if($registros >= 1){
 					while($row = mysql_fetch_assoc($obrasArtista_result)) { 
 				?>
 				<li class="obras-artista-highlights-item">

@@ -179,22 +179,33 @@ body
 
 .page-title
 		width 100%
-		padding: 10px
+		padding: 10px 10px 10px 15px
 		margin 20px 0px
 		background nexus_red
 		color #fff
 		font-family Planer, sans-serif
 		position relative
 		
-		&:after{
-		content ""
-		width 95%
-		height 10px
-		position absolute
-		bottom -10px
-		left 0
-		background #000
-		}
+		&:before
+			content ""
+			width 0
+			height 0
+			position absolute
+			left 0px
+			bottom 0px
+			border-bottom 15px solid light-grey
+			border-right 15px solid transparent
+		
+		/* efeito "pontiagudo" do menu */
+		&:after
+			content ""
+			width 0
+			height 0
+			position absolute
+			right 0px
+			top 0px
+			border-top 15px solid light-grey
+			border-left  15px solid transparent
 		
 		/*--------------------- Home -----------------------*/
 			
@@ -204,11 +215,25 @@ body
 	margin-bottom 50px
 	border-bottom 5px nexus_red solid
 	border-top 5px nexus_red solid
+	position relative
 			
 	img{
 		width 100%
 	}
 
+	h1{
+		padding 5px
+		position absolute
+		top 0px
+		margin 0px
+		text-align center
+		left 50%
+		transform translateX(-50%);
+		color #Fff;
+		background nexus_red
+		font-family 'Planer', sans-serif
+	}
+	
 .nav-home
 	width 1060px
 	height auto
@@ -254,7 +279,7 @@ body
 			margin 0px
 			color #fff
 			font-size 22px
-			font-family 'Planer'
+			font-family 'Planer', sans-serif
 
 //Abertura
 
@@ -358,18 +383,48 @@ body
 	color #fff
 	background nexus_red
 	width 740px
-	padding 3px 10px
-	font-family 'Planer'
+	padding 5px 10px
+	font-family 'Planer', sans-serif
 	margin-top 0px
+	position relative
+
+	&:before
+		content ""
+		width 0
+		height 0
+		position absolute
+		left 0px
+		bottom 0px
+		border-bottom 15px solid light-grey
+		border-right 15px solid transparent
+	
+	/* efeito "pontiagudo" do menu */
+	&:after
+		content ""
+		width 0
+		height 0
+		position absolute
+		right 0px
+		top 0px
+		border-top 15px solid light-grey
+		border-left  15px solid transparent
 		
 .info-artista-individual
 	text-align right
 	color nexus_red
+	padding-right 5px
 	margin 5px 0px
-	font-family 'Planer'
+	font-family 'Planer', sans-serif
 	
 	span
 		color #000
+		
+	&.text-left
+		text-align left
+		
+	&.text-left:last-of-type
+		margin-bottom 30px
+
 
 .img-artista-individual
 	margin-left space*2
@@ -423,7 +478,7 @@ body
 		color #fff
 		text-align right
 		fortransition all 0.5s ease 0s
-		font-family 'Planer'
+		font-family 'Planer', sans-serif
 		
 	
 	& h3
@@ -448,7 +503,7 @@ body
 			
 .experimentos-item
 	width 530px
-	height 312px
+	height 298px
 	background dark-grey
 	float left;
 	position relative
