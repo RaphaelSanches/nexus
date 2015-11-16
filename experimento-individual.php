@@ -25,7 +25,7 @@
 			</div>
 			
 			<h3 class="info-artista-individual text-left">//Quando:</h3>
-			<h3 class="info-artista-individual text-left">//Onde: <span>São Paulo, Brasil</span></h3>
+			<h3 class="info-artista-individual text-left">//Onde: <span><?php echo $row['local'] ?></span></h3>
 			<div class="box-texto-corner">
 				<?php echo $row['texto']; ?>
 			</div>

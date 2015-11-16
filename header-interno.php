@@ -31,19 +31,19 @@
 			<nav role="navigation" class="nav-main">
 				<ul role="menubar">
 					<li class="nav-main-item" role="presentation">
-						<a href="index.php" role="menuitem">Home</a>
+						<a href="index.php" role="menuitem">//home</a>
 					</li>
 					<li class="nav-main-item" role="presentation">
-						<a href="#" role="menuitem">Arte telemática</a> 
+						<a href="#" role="menuitem">//arte telemática</a> 
 					</li>
 					<li class="nav-main-item" role="presentation">
-						<a href="artistas.php" role="menuitem">Artistas</a>
+						<a href="artistas.php" role="menuitem">//artistas</a>
 					</li>
 					<li class="nav-main-item" role="presentation">
-						<a href="experimentos.php">Experimentos</a>
+						<a href="experimentos.php">//experimentos</a>
 					</li>
 					<li class="nav-main-item" role="presentation">
-						<a href="#" role="menuitem">?</a>
+						<a href="#" role="menuitem">//o nexus</a>
 					</li>
 				</ul>
 			</nav>
