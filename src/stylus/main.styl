@@ -275,7 +275,42 @@ body
 	position relative
 	float left
 	margin 40px 140px
+
+	@keyframes glitch{
+		0%{
+			transform translate(0px, 0px);
+		}
+		
+		49%{
+			transform translate(0px, 0px);
+		}
+		
+		50%{
+			transform translate(-25px, 25px);
+		}
+		
+		55%{
+			transform translate(-25px, 25px);
+		}
+		56%{
+			transform translate(0px, 0px);
+		}
+		
+		88%{
+			transform translate(0px, 0px);
+		}
+		
+		89%{
+			transform translate(0px, 0px);
+		}
+		90%{
+			transform translate(25px, -25px);
+		}
+	}
 	
+	&:hover
+		animation glitch 2s linear 0s infinite running;
+		
 	& img
 		width 250px
 		height 312px

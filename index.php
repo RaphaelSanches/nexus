@@ -47,15 +47,19 @@
 		<ul>
 
 			<a href="#" class="nav-home-item">
+				<img src="assets/img/content/home-menu/arte-telematica.jpg" alt="Arte telemática">
 				<h2>Arte Telemática</h2>
 			</a>
 			<a href="artistas.php" class="nav-home-item">
+				<img src="assets/img/content/home-menu/artista.jpg" alt="Artistas - imagem ilustrativa">
 				<h2>Artistas</h2>
 			</a>
 			<a href="experimentos.php" class="nav-home-item">
+				<img src="assets/img/content/home-menu/experimentos.jpg" alt="Experimentos - imagem ilustrativa">
 				<h2>Experimentos</h2>
 			</a>
 			<a href="#" class="nav-home-item">
+				<img src="assets/img/content/home-menu/nexus.jpg" alt="O Nexus - imagem ilustrativa">
 				<h2>O Nexus</h2>
 			</a>
 		</ul>
