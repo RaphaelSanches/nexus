@@ -58,7 +58,7 @@
 				<img src="assets/img/content/home-menu/experimentos.jpg" alt="Experimentos - imagem ilustrativa">
 				<h2>Experimentos</h2>
 			</a>
-			<a href="#" class="nav-home-item">
+			<a href="o-nexus.php" class="nav-home-item">
 				<img src="assets/img/content/home-menu/nexus.jpg" alt="O Nexus - imagem ilustrativa">
 				<h2>O Nexus</h2>
 			</a>

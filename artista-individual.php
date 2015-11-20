@@ -1,6 +1,9 @@
 <?php
 
-	
+		
+	//define o título da página
+	$titlePage = "Artistas";
+
 	//adiciona o header
 	include "header-interno.php";
 
@@ -10,8 +13,21 @@
 
 	$row = mysql_fetch_assoc($artistaIndividual_result);
 
-	//define o título da página
-	$titlePage = $row['nome'];
+
+	function limitarTexto($texto, $limite){
+		//conta os caracteres
+  		$contador = strlen($texto);
+
+  		//limita os caracteres
+ 		if ( $contador >= $limite ) {    
+ 		  	//limita os caracteres  
+     		$texto = substr($texto, 0, strrpos(substr($texto, 0, $limite), ' ')) . '...';
+     		return $texto;
+ 		 }
+  		else{
+   		 return $texto;
+  		}
+	} 
 ?>
 
 	<!-- Conteúdo principal da página -->
@@ -30,36 +46,45 @@
 			</div>
 			
 			<img class="img-artista-individual" src="assets/img/content/autor/<?php echo $row['img_url'] ?>" width="300">
-		</article>
-		
+		</article			
+
 		<ul class="obras-artista-highlights cf">
+			<h2 class="page-title">Obras do Artista</h2>
+
 			<?php 	
 
-				$obrasArtista_result = mysql_query("SELECT obras.cod_obra, obras.nome, obras.destaque, obras.texto FROM obras INNER JOIN autor_x_obras ON autor_x_obras.cod_obra = obras.cod_obra WHERE autor_x_obras.cod_autor = $cod_autor ORDER BY obras.destaque DESC") or die(mysql_error());
+				$obrasArtista_result = mysql_query("SELECT obras.cod_obra, obras.nome, obras.destaque, obras.texto, img.img_url, img.cod_obra, img.destaque 
+					FROM obras 
+						INNER JOIN autor_x_obras ON autor_x_obras.cod_obra = obras.cod_obra
+						RIGHT JOIN img ON img.cod_obra = obras.cod_obra 
+					WHERE autor_x_obras.cod_autor = $cod_autor AND img.cod_obra = obras.cod_obra AND img.destaque = 1
+					ORDER BY obras.destaque DESC") or die(mysql_error());
+				
+				//quantidade de registros
 				$registros = mysql_num_rows($obrasArtista_result);
+
 
 				if($registros >= 1){
 					while($row = mysql_fetch_assoc($obrasArtista_result)) { 
+
 				?>
 				<li class="obras-artista-highlights-item">
 					<a href="experimento-individual.php?cod_obra=<?php echo $row['cod_obra'] ?>">
-						<img src="k2.jpg">
+						<img src="assets/img/content/experimentos/<?php echo $row['nome'] ?>/<?php echo $row['img_url'] ?>">
 					</a>
 					<a href="experimento-individual.php?cod_obra=<?php echo $row['cod_obra'] ?>">
 						<h3><?php echo $row['nome']; ?></h3>
 					</a>
 
-					<p><?php echo $row['texto']; ?></p>
+					<p><?php echo limitarTexto($row['texto'], 300) ?></p>
 				</li>
 				<?php } 
 
 				}
 				else{
-					echo "Nadinha";
+					echo "<h2 class='version-text'>ERROR 404<br />Infelizmente, não possuímos obras cadastradas desse artista.</h2>";
 				}
 				?>
-
-
 		</ul>
 	</section>
 

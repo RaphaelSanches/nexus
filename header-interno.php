@@ -4,7 +4,9 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	
+	<script src="src/js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="src/js/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript">$(".wrap-img").fancybox({		'overlayShow'	:	true, 'openEffect' : 'fade' });</script>
 	<?php
 		include "config.php";
 		// linha que estabelece a conexão
@@ -19,6 +21,8 @@
 
 </head>
 <body>
+	<div class="load-overlay"></div>
+
 	<!-- header da página -->
 	<header class="header header-interno" role="banner">
 		<div class="container cf">
@@ -34,7 +38,7 @@
 						<a href="index.php" role="menuitem">//home</a>
 					</li>
 					<li class="nav-main-item" role="presentation">
-						<a href="#" role="menuitem">//arte telemática</a> 
+						<a href="arte-telematica.php" role="menuitem">//arte telemática</a> 
 					</li>
 					<li class="nav-main-item" role="presentation">
 						<a href="artistas.php" role="menuitem">//artistas</a>
@@ -43,7 +47,7 @@
 						<a href="experimentos.php">//experimentos</a>
 					</li>
 					<li class="nav-main-item" role="presentation">
-						<a href="#" role="menuitem">//o nexus</a>
+						<a href="o-nexus.php" role="menuitem">//o nexus</a>
 					</li>
 				</ul>
 			</nav>

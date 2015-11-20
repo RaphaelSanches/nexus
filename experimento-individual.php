@@ -45,16 +45,27 @@
 		
 			<div class="galeria-experimento">
 				<h3>Galeria</h3>
+				<?php  
+					$img_result = mysql_query("SELECT img.img_url, img.cod_obra, img.destaque FROM img WHERE img.cod_obra = $cod_obra AND destaque = 0") or die(mysql_error());;
 
-				<a href="#" class="wrap-img">
-					<img src="k2.jpg">		
+					//quantidade de registros
+					$registros = mysql_num_rows($img_result);
+
+					if($registros >= 1){
+						while($row3 = mysql_fetch_assoc($img_result)) {
+				?>
+				<a href="assets/img/content/experimentos/<?php echo $row['nome'] ?>/<?php echo $row3['img_url'] ?>" class="wrap-img" rel="example_group">
+					<img src="assets/img/content/experimentos/<?php echo $row['nome'] ?>/<?php echo $row3['img_url'] ?>">
 				</a>
-				<a href="#" class="wrap-img">
-					<img src="k1.jpg">		
-				</a>
-				<a href="#" class="wrap-img">
-					<img src="k2.jpg">		
-				</a>
+
+				<?php 
+						}
+					}
+
+				else { 
+					echo "<h2 class='version-text'><strong>ERROR 404</strong></h2>Infelizmente, não possuímos mais imagens dessa obra.";
+				}
+				?>
 			</div>
 
 		</aside>

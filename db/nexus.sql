@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Nov-2015 às 05:06
+-- Generation Time: 20-Nov-2015 às 06:02
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `img` (
   `img_url` varchar(100) NOT NULL,
   `cod_obra` int(11) DEFAULT NULL,
   `destaque` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `img`
@@ -124,7 +124,16 @@ INSERT INTO `img` (`cod_img`, `img_url`, `cod_obra`, `destaque`) VALUES
 (4, 'GVDestaque.jpg', 4, 1),
 (5, 'BBDestaque.jpg', 5, 1),
 (6, 'HSDestaque.jpg', 6, 1),
-(7, 'CDestaque.jpg', 7, 1);
+(7, 'CDestaque.jpg', 7, 1),
+(8, 'A30_3.jpg', 2, 0),
+(9, 'A30_2.jpg', 2, 0),
+(10, 'A30_1.jpg', 2, 0),
+(11, 'SXIV1.jpg', 1, 0),
+(12, 'SXIV2.jpg', 1, 0),
+(13, 'GB1.jpg', 4, 0),
+(14, 'GB2.jpg', 4, 0),
+(15, 'GB3.jpg', 4, 0),
+(16, 'GB4.jpg', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -209,7 +218,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `img`
 --
 ALTER TABLE `img`
-  MODIFY `cod_img` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `cod_img` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `obras`
 --

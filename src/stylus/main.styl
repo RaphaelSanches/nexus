@@ -183,7 +183,10 @@ body
 			top 0px
 			border-top 15px solid light-grey
 			border-left  15px solid transparent
-		
+
+.page-title + .version-text{
+	text-align center
+}
 		/*--------------------- Home -----------------------*/
 			
 .banner-home
@@ -453,18 +456,22 @@ body
 .obras-artista-highlights
 	width 100%
 	margin space*5
+	background #000
 	
 .obras-artista-highlights-item
-	width 400px
-	height 250px
+	width 530px
+	height 297px
 	float left
 	position relative
 	background med-grey
 	overflow hidden
 	
-	&:first-child
-		width 600px
-		height 500px
+	&:first-of-type
+		width 100%
+		height 560px
+		
+	&:last-of-type
+		margin-bottom 80px
 	
 	& img
 		width 100%
@@ -480,7 +487,7 @@ body
 
 
 	& h3
-	&:first-child  h3
+	&:first-of-type h3
 		width auto
 		background nexus_red
 		position absolute
@@ -498,11 +505,11 @@ body
 		padding 6px
 		
 
-	&:first-child  h3
+	&:first-of-type h3
 		font-size 28px
 		padding 10px
 		
-	&:first-child:hover h3
+	&:first-of-type:hover h3
 		transform translateY(-450px)
 
 	&:hover h3
@@ -568,16 +575,6 @@ body
 		background nexus_red
 		color #fff
 		font-family Planer, sans-serif
-		
-		&:after{
-			content ""
-			width 90%
-			height 10px
-			position absolute
-			top -10px
-			left 0
-			background #000
-		}
 		
 		h2
 			font-size 40px
@@ -660,11 +657,11 @@ body
 .galeria-experimento
 	width 100%
 	margin-top 74px
+	text-align center
 	
 	h3
 		font-family Planer, sans-serif
 		width 100%
-		text-align center
 		color #000
 		font-size 30px
 	    margin 10px 0px
@@ -692,4 +689,129 @@ body
 			top -40%
 			left -40%
 			fortransition all 0.5s ease 0s
+
+
+// O Nexus
+// ------------------------------------------------------
+
+.large-corner-box{
+	width 800px
+	margin 50px auto
+	padding 80px 100px
+	font-family Planer, sans-serif
+	position relative
+	font-size 18px
+
+	&:before{
+		content " "
+		background url(../../src/img/corner.svg) no-repeat
+		background-size 240px
+		position absolute
+		left 0px
+		bottom -100px
+		width 295px
+		height 295px
+		z-index 1
+	}
 	
+	&:after{
+		content " "
+		background url(../../src/img/corner.svg) no-repeat
+		background-size 240px
+		position absolute
+		top -100px
+		right 0px
+		transform rotate(180deg)
+		width 295px
+		height 295px
+		z-index 1
+
+	}
+	
+	h1{
+		font-size 40px
+		
+	}
+	
+}
+
+.version-text{
+	font-family Planer, sans-serif
+	&:after{
+		content "_"
+		animation blink 0.7s linear 0s infinite alternate
+	}
+
+	@keyframes blink{
+		from{
+			opacity 1
+		}
+		
+		to{
+			opacity 0
+		}
+	}
+}
+
+//Load Overley
+//-----------------------------------------------------------------------
+
+.load-overlay{
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    position: fixed;
+    z-index: 1000;
+    opacity: 1;
+    -webkit-animation: appearContent linear 1s 0s 1 forwards;
+    -o-animation: appearContent linear 1s 0s 1 forwards;
+    animation: appearContent linear 1s 0s 1 forwards;  
+}
+
+/*animação de aparição do site */
+
+@-webkit-keyframes appearContent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -20;
+  }
+}
+@-moz-keyframes appearContent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -20;
+  }
+}
+@-ms-keyframes appearContent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -20;
+  }
+}
+@-o-keyframes appearContent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -20;
+  }
+}
+@keyframes appearContent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -20;
+  }
+}
