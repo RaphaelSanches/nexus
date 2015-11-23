@@ -38,14 +38,15 @@
 				<h3 class="info-artista-individual">
 					Cidade: <span><?php echo $row['local_nasc']; ?></span></h3>
 				<h3 class="info-artista-individual">
-					Nascimento: <span><?php echo $row['data_nasc']; ?></span>
+					Nascimento: <span><?php echo date('d/m/Y',  strtotime($row['data_nasc'])); ?></span>
 				</h3>
 				<p class="box-texto-corner">
 					<?php echo $row['texto']; ?>
 				</p>
 			</div>
-			
-			<img class="img-artista-individual" src="assets/img/content/autor/<?php echo $row['img_url'] ?>" width="300">
+			<div class="img-artista-individual img-container--medium">
+				<img src="assets/img/content/autor/<?php echo $row['img_url'] ?>" width="300">
+			</div>
 		</article			
 
 		<ul class="obras-artista-highlights cf">

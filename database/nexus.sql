@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Nov-2015 às 06:02
+-- Generation Time: 23-Nov-2015 às 02:58
 -- Versão do servidor: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -57,8 +57,8 @@ INSERT INTO `autor` (`cod_autor`, `nome`, `local_nasc`, `texto`, `data_nasc`, `i
 --
 
 CREATE TABLE IF NOT EXISTS `autor_x_obras` (
-  `cod_autor` int(11) NOT NULL,
-  `cod_obra` int(11) NOT NULL
+  `cod_autor` int(4) NOT NULL,
+  `cod_obra` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -72,7 +72,11 @@ INSERT INTO `autor_x_obras` (`cod_autor`, `cod_obra`) VALUES
 (6, 4),
 (7, 5),
 (9, 6),
-(8, 7);
+(8, 7),
+(2, 8),
+(1, 9),
+(4, 10),
+(5, 10);
 
 -- --------------------------------------------------------
 
@@ -97,8 +101,8 @@ INSERT INTO `banner` (`cod_banner`, `image_url`, `link_url`, `posicao`, `ativo`,
 (4, 'banner/banner_1.jpg', 'experimento-individual.php?cod_obra=4', 1, 1, 'Global Visionary - Nam June Paik'),
 (5, 'banner/banner_4.jpg', 'experimento-individual.php?cod_obra=3', 4, 1, 'A Televisão Experimental - Nam June Paik'),
 (6, 'banner/banner_2.jpg', 'artista-individual.php?cod_autor=1', 2, 1, 'Roy Ascott: O Pré-cursor da Arte Telemática'),
-(7, 'banner/banner_3.jpg', '#', 3, 1, 'The Web of Life - Michael Gleich e Jeffrey Shaw'),
-(8, 'banner/banner_5.jpg', '#', 5, 1, 'The File Room - Antonio Muntadas');
+(7, 'banner/banner_3.jpg', 'experimento-individual.php?cod_obra=10', 3, 1, 'The Web of Life - Michael Gleich e Jeffrey Shaw'),
+(8, 'banner/banner_5.jpg', 'experimento-individual.php?cod_obra=8', 5, 1, 'The File Room - Antonio Muntadas');
 
 -- --------------------------------------------------------
 
@@ -111,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `img` (
   `img_url` varchar(100) NOT NULL,
   `cod_obra` int(11) DEFAULT NULL,
   `destaque` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `img`
@@ -133,7 +137,14 @@ INSERT INTO `img` (`cod_img`, `img_url`, `cod_obra`, `destaque`) VALUES
 (13, 'GB1.jpg', 4, 0),
 (14, 'GB2.jpg', 4, 0),
 (15, 'GB3.jpg', 4, 0),
-(16, 'GB4.jpg', 4, 0);
+(16, 'GB4.jpg', 4, 0),
+(17, 'laplissure-destaque.jpg', 9, 1),
+(18, 'WOLDestaque.jpg', 10, 1),
+(19, 'WOL2.jpg', 10, 0),
+(20, 'WOL1.jpg', 10, 0),
+(21, 'TFRDestaque.jpg', 8, 1),
+(22, 'TFR1.jpg', 8, 0),
+(23, 'TFR2.jpg', 8, 0);
 
 -- --------------------------------------------------------
 
@@ -144,24 +155,27 @@ INSERT INTO `img` (`cod_img`, `img_url`, `cod_obra`, `destaque`) VALUES
 CREATE TABLE IF NOT EXISTS `obras` (
   `cod_obra` int(4) NOT NULL,
   `nome` varchar(90) NOT NULL,
-  `data` date NOT NULL,
+  `data` year(4) NOT NULL,
   `texto` text NOT NULL,
   `destaque` tinyint(1) NOT NULL DEFAULT '0',
   `local` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `obras`
 --
 
 INSERT INTO `obras` (`cod_obra`, `nome`, `data`, `texto`, `destaque`, `local`) VALUES
-(1, 'Stadium XIV', '2015-10-15', ' ‘Stadium XIV’ integra uma série, chamada “Media Architecture Installations”, cujos trabalhos incorporam a linguagem da arquitetura. A obra enfatiza a ideia do estádio como espaço de comunicação e questiona o papel do espectador por meio de uma inversão: se o público tradicionalmente senta-se na parte externa do estádio, nesta obra ele é projetado para o centro do campo, delimitada por uma “grade” de colunas que configura uma elipse.<br /><br >\nUma das obras em destaque é a "Stadium XIV", que compõe uma série intitulada "Media Architecture Installations". Com 13 m e 50 imagens diferentes projetadas num intervalo de seis segundos, a grande instalação dialoga com a linguagem arquitetônica e enfatiza a ideia do estádio como uma esfera de comunicação. Ali, o próprio papel do público é posto em questão.\n', 0, 'Pinacoteca do Estado Praça da Luz'),
-(2, 'Acaso 30', '2015-10-08', 'Acaso30 é uma instalação interativa em lembrança aos mortos na chacina da baixada fluminense, no bairro de queimados entre uma noite de quinta-feira e uma madrugada de sexta, em março 2005 onde 30 pessoas foram eliminadas. A instalação é montada em um espaço semi-aberto, como se fosse uma praça, onde possa haver bastante circulação, mas com luz reduzida. No centro do espaço um grande e pesado tapete azul.<br /><br /> As séries de imagens assim como os locais da projeção são feitos de forma aleatória. Uma vez que uma pessoa suba no tapete dois eventos ocorrem: uma imagem de um corpo nu em agonia é projetada no chão e um vento forte e cortante é acionado por um ventilador desde uma parede frontal ao interator. O único ruído é o do vento direto sobre o espectador causando tensão e instabilidade. Quanto às imagens, à partir do momento que elas são projetadas em um local são geradas zonas de tensão que fazem com que as ações dos corpos reajam diretamente à aproximação e afastamento dos espectadores. Quando eles chegam junto aos corpos a situação se torna irreversível com a morte dos personagens e o esvanecimento das imagens. Tem-se um intervalo sem projeções e ações.', 1, 'Cinético Digital, Itaú Cultural, São Paulo'),
-(3, 'A Televisão Experimental', '2015-11-15', 'O sul-coreano Nam June Paik entrou para o Fluxus no início dos anos sessenta e logo se destacou por suas performances, quebras estéticas e delírios eletrônicos. Mas foi com a “Exposition of Music-Electronic Television” realizada na cidade de Wuppertal na então Alemanha Ocidental - que o artista mudou definitivamente - a história da arte em sua relação com a eletrônica.<br /><br >\nA Televisão Experimental - como foi chamada por Paik - trazia 12 televisores ligados com imagens manipuladas de uma programação local, combinados com pianos, toca discos, gravadores e uma cabeça de boi pendurada na entrada, como uma espécie de ritual mântrico-eletrônico que trazia o espectador para sinestésicas elucidações dechumpianas.<br /><br >\nA exposição executada durante dez dias trazia ainda textos teóricos de Paik e inaugurava a possibilidade de arte com vídeo e anunciava elementos que jamais deixaram de se nutrir de seus princípios, como a arte digital por exemplo.', 0, 'Wuppertal, Alemanha'),
-(4, 'Global Visionary', '2015-11-15', 'A mostra ocorre em sua sede central Smithsonian American Art Museum de Washington DC (EEUU) que, em 2009, adquiriu dos herdeiros do artista todo o conteúdo de seu arquivo.\nA mostra, em cartaz até 11 de agosto de 2013, inclui 67 grandes peças e 140 objetos do arquivo, desde velhos aparelhos de rádio e monitores de televisão até manuscritos.<br /><br >\nA exposição, no entanto, não está “presa” às paredes do museu. Nam June Paik: Global Visionary se expande na rede: há um perfil no Flickr com fotos da mostra, um canal de Youtube com vídeos sobre a montagem e desenvolvimento, um arquivo digital interativo da obra polimórfica do artista e suas muitas coleções – jogos, robôs, aparelhos de televisão, jaulas de pássaros, figurinhas de Elvis Presley e Beethoven. Além de tudo isso, se juntam perfis no Facebook e no Twitter (com hashtag #paik).<br /><br >\nUma das novidades interativas da mostra é o retorno à vida de Flait PaikBot, um dos robôs do artista. Os organizadores convidam a todos a fazer fotos em qualquer lugar do mundo do androide (pode-se baixar uma imagem em PDF) e enviá-las a @PaikBot. Uma seleção de imagens será alojada em Painklandia, um mural de Pinterest sobre as viagens de PaikBot.', 0, 'Smithsonian American Art Museum de Washington DC (EEUU)'),
-(5, 'A mulher que não é B.B.', '2015-11-15', 'No Brasil, o primeiro artista a identificar a arte computacional com a arte contemporânea é Waldemar Cordeiro que cria obras de cunho “industrial” e “construtivo”. <br /><br >\nWaldemar Cordeiro, junto com outros artistas como Julio Plaza e Abraham Palatik, é considerado um precursor da arte computacional brasileira. Cordeiro foi um dos mentores da arte concreta e organizou o célebre evento Arteônica em 1971 – o primeiro evento de arte e tecnologia do Brasil em grande porte – realizado na FAAP, em São Paulo. Defendia que os artistas deviam ter um domínio das linguagens de programação para tirar um proveito completo da máquina.<br /><br >\nAcima, “A mulher que não é B.B. (Brigite Bardot)" reproduz graficamente, pontilhada com nuances do preto ao branco em um computador IBM 360, o rosto da pequena vietnamita, cuja foto correndo nua chocou o mundo dos anos 70. ', 0, 'FAAP, em São Paulo'),
-(6, 'Hole in Space', '2015-11-15', 'Tão perto dos olhos - Entre as primeiras experimentações artísticas explorando o potencial sincrônico nas novas tecnologias da comunicação está “Hole in Space” de 1980. Kit Galloway e Sherry Rabinowitz  criaram uma interface em tempo real entre as cidades de Los Angeles e New York City (ambas nos Estados Unidos) que, como num “vácuo no espaço”, tornavam presentes as pessoas fisicamente distantes, em espaços públicos das duas cidades. As pessoas de cada um dos locais se viam através de um telão em tempo real.', 0, 'Cidades de Los Angeles e New York City'),
-(7, 'CIRCULADÔ', '2015-11-15', 'O projeto previa a criação de um Zoetrop (dispositivo de animação do século 19) em grande escala, que seria manipulado através de uma interface circular em acrílico criada especialmente para a obra.<br /><br >\nA interação do visitante controla o giro do personagem em volta de seu próprio eixo, decidindo sua intensidade, direção de movimento e também o deslocamento 360 graus do som com auxílio de um sistema 5.1 surround. O trabalho foi executado com sensores analógicos de rotação para capturar o movimento do participante, programado no ambiente de programação ISADORA e projetado através das placas de vídeo TripleHeadTogo. ', 0, 'Festival ARTE.MOV em Porto Alegre');
+(1, 'Stadium XIV', 0000, ' ‘Stadium XIV’ integra uma série, chamada “Media Architecture Installations”, cujos trabalhos incorporam a linguagem da arquitetura. A obra enfatiza a ideia do estádio como espaço de comunicação e questiona o papel do espectador por meio de uma inversão: se o público tradicionalmente senta-se na parte externa do estádio, nesta obra ele é projetado para o centro do campo, delimitada por uma “grade” de colunas que configura uma elipse.<br /><br >\nUma das obras em destaque é a "Stadium XIV", que compõe uma série intitulada "Media Architecture Installations". Com 13 m e 50 imagens diferentes projetadas num intervalo de seis segundos, a grande instalação dialoga com a linguagem arquitetônica e enfatiza a ideia do estádio como uma esfera de comunicação. Ali, o próprio papel do público é posto em questão.\n', 0, 'Pinacoteca do Estado Praça da Luz'),
+(2, 'Acaso 30', 0000, 'Acaso30 é uma instalação interativa em lembrança aos mortos na chacina da baixada fluminense, no bairro de queimados entre uma noite de quinta-feira e uma madrugada de sexta, em março 2005 onde 30 pessoas foram eliminadas. A instalação é montada em um espaço semi-aberto, como se fosse uma praça, onde possa haver bastante circulação, mas com luz reduzida. No centro do espaço um grande e pesado tapete azul.<br /><br /> As séries de imagens assim como os locais da projeção são feitos de forma aleatória. Uma vez que uma pessoa suba no tapete dois eventos ocorrem: uma imagem de um corpo nu em agonia é projetada no chão e um vento forte e cortante é acionado por um ventilador desde uma parede frontal ao interator. O único ruído é o do vento direto sobre o espectador causando tensão e instabilidade. Quanto às imagens, à partir do momento que elas são projetadas em um local são geradas zonas de tensão que fazem com que as ações dos corpos reajam diretamente à aproximação e afastamento dos espectadores. Quando eles chegam junto aos corpos a situação se torna irreversível com a morte dos personagens e o esvanecimento das imagens. Tem-se um intervalo sem projeções e ações.', 1, 'Cinético Digital, Itaú Cultural, São Paulo'),
+(3, 'A Televisão Experimental', 0000, 'O sul-coreano Nam June Paik entrou para o Fluxus no início dos anos sessenta e logo se destacou por suas performances, quebras estéticas e delírios eletrônicos. Mas foi com a “Exposition of Music-Electronic Television” realizada na cidade de Wuppertal na então Alemanha Ocidental - que o artista mudou definitivamente - a história da arte em sua relação com a eletrônica.<br /><br >\nA Televisão Experimental - como foi chamada por Paik - trazia 12 televisores ligados com imagens manipuladas de uma programação local, combinados com pianos, toca discos, gravadores e uma cabeça de boi pendurada na entrada, como uma espécie de ritual mântrico-eletrônico que trazia o espectador para sinestésicas elucidações dechumpianas.<br /><br >\nA exposição executada durante dez dias trazia ainda textos teóricos de Paik e inaugurava a possibilidade de arte com vídeo e anunciava elementos que jamais deixaram de se nutrir de seus princípios, como a arte digital por exemplo.', 0, 'Wuppertal, Alemanha'),
+(4, 'Global Visionary', 2012, 'A mostra ocorre em sua sede central Smithsonian American Art Museum de Washington DC (EEUU) que, em 2009, adquiriu dos herdeiros do artista todo o conteúdo de seu arquivo.\nA mostra, em cartaz até 11 de agosto de 2013, inclui 67 grandes peças e 140 objetos do arquivo, desde velhos aparelhos de rádio e monitores de televisão até manuscritos.<br /><br >\nA exposição, no entanto, não está “presa” às paredes do museu. Nam June Paik: Global Visionary se expande na rede: há um perfil no Flickr com fotos da mostra, um canal de Youtube com vídeos sobre a montagem e desenvolvimento, um arquivo digital interativo da obra polimórfica do artista e suas muitas coleções – jogos, robôs, aparelhos de televisão, jaulas de pássaros, figurinhas de Elvis Presley e Beethoven. Além de tudo isso, se juntam perfis no Facebook e no Twitter (com hashtag #paik).<br /><br >\nUma das novidades interativas da mostra é o retorno à vida de Flait PaikBot, um dos robôs do artista. Os organizadores convidam a todos a fazer fotos em qualquer lugar do mundo do androide (pode-se baixar uma imagem em PDF) e enviá-las a @PaikBot. Uma seleção de imagens será alojada em Painklandia, um mural de Pinterest sobre as viagens de PaikBot.', 0, 'Smithsonian American Art Museum de Washington DC (EEUU)'),
+(5, 'A mulher que não é B.B.', 1970, 'No Brasil, o primeiro artista a identificar a arte computacional com a arte contemporânea é Waldemar Cordeiro que cria obras de cunho “industrial” e “construtivo”. <br /><br >\nWaldemar Cordeiro, junto com outros artistas como Julio Plaza e Abraham Palatik, é considerado um precursor da arte computacional brasileira. Cordeiro foi um dos mentores da arte concreta e organizou o célebre evento Arteônica em 1971 – o primeiro evento de arte e tecnologia do Brasil em grande porte – realizado na FAAP, em São Paulo. Defendia que os artistas deviam ter um domínio das linguagens de programação para tirar um proveito completo da máquina.<br /><br >\nAcima, “A mulher que não é B.B. (Brigite Bardot)" reproduz graficamente, pontilhada com nuances do preto ao branco em um computador IBM 360, o rosto da pequena vietnamita, cuja foto correndo nua chocou o mundo dos anos 70. ', 0, 'FAAP, em São Paulo'),
+(6, 'Hole in Space', 1980, 'Tão perto dos olhos - Entre as primeiras experimentações artísticas explorando o potencial sincrônico nas novas tecnologias da comunicação está “Hole in Space” de 1980. Kit Galloway e Sherry Rabinowitz  criaram uma interface em tempo real entre as cidades de Los Angeles e New York City (ambas nos Estados Unidos) que, como num “vácuo no espaço”, tornavam presentes as pessoas fisicamente distantes, em espaços públicos das duas cidades. As pessoas de cada um dos locais se viam através de um telão em tempo real.', 0, 'Cidades de Los Angeles e New York City'),
+(7, 'CIRCULADÔ', 2010, 'O projeto previa a criação de um Zoetrop (dispositivo de animação do século 19) em grande escala, que seria manipulado através de uma interface circular em acrílico criada especialmente para a obra.<br /><br >\nA interação do visitante controla o giro do personagem em volta de seu próprio eixo, decidindo sua intensidade, direção de movimento e também o deslocamento 360 graus do som com auxílio de um sistema 5.1 surround. O trabalho foi executado com sensores analógicos de rotação para capturar o movimento do participante, programado no ambiente de programação ISADORA e projetado através das placas de vídeo TripleHeadTogo. ', 0, 'Festival ARTE.MOV em Porto Alegre'),
+(8, 'The File Room', 1994, 'Estreiando em 1994, The File Room foi um dos primeiros trabalhos artísticos da Mídia online. Criado por Antonio Muntadas, tinha como objetivo realizar um comentário sobre o caracter da censura e seu papel em frustar a expressão pessoal e popular. Consistia de uma banco de dados aonde qualquer usuário, depois de preencher um formulário, pode enviar um exemplo de censura, criando assim um verdadeiro arquivo de casos variados durante os anos.\r\n<br /><br />\r\nEm sua inauguração, de acordo com Prado (2003), o projeto utilizou de uma instalação kafkiana, devido ao seu estilo surreal e misturado ao ficcional, aonde uma sala era rodeada de muros de caixas empilhadas, aonde se localizavam monitores ligados a internet. The File Room é um ótimo exemplo de arte aonde o expectador tem um papel ativo e influencia no desenvolvimento da mesma, umas da possibilidades que é dada pela telemática e web.\r\n<br /><br />\r\nO site aonde a database pode ser acessado ainda está online e aceita novas entradas, além de oferecer um enorme arsenal sobre o assunto. \r\n', 0, 'Chicago, EUA'),
+(9, 'La Plissure du Texte - Um Conto de Fadas Planetárias', 1983, 'Durante a exposição “Electra” de 1983, Roy Ascott apresentou no Musée d’Art Moderne de la Ville de Paris um projeto de conto de fadas improvisado e contado por mais de um autor. Para isso, Ascott utilizou um sistema de comunicação chamado Artex e reuniu 11 artistas de diferentes países, cidades e culturas (Austria, Austrália, Canadá, Holanda, França, Havaí, Inglaterra, Gales e EUA) para que cada um interpretasse o papel de um personagem. Com o experimento, o artista buscava proporcionar prazer narrativo, conceito de Roland Barthes que propõe o “saber com sabor”, em um contexto de um sistema aberto não-linear e de um alcance infinito.<br /><br />\r\nO enredo do conto, por ser multi-autoral, apresenta características como a presença de mais de um foco narrativo e a não lineridade. Também, por conta dos fuso horários diferentes, as narrativas se fragmentaram e sobrepuseram com uma frequência maior do que a esperada. Baseando-se em Vladimir Propp e suas sete dramatis personae, o organizador de La Plissure du Texte definiu que as personagens seriam as clássicas de contos de fadas como, por exemplo, cavaleiro, mago, bruxo, princesa e etc.<br /><br />\r\nÉ importante também destacar na obra momentos em que os artistas, muitas vezes em conjunto, utilizam os caracteres para formarem imagens, efeitos e até símbolos que complementam a história. Na imagem abaixo há um exemplo de um trecho em que isso acontece e também do uso de ornomatopeias, extremamente presentes na obra.\r\n', 1, 'Paris, Fraça'),
+(10, 'The Web of Life', 2002, 'The Web of Life é um projeto de quatro instalações interativas que promovem uma reflexão sobre a intersecção da arte, tecnologia e ciência. Criada por Michael Gleich e Jeffrey Shaw, o projeto consistia em cinco instalações: quatro instalações móveis que passavam por diversas cidades do mundo e uma fixa localizada em Kalsruhe, na Alemanha. A ideia era que ao entrar em uma das instalações, o visitante colocasse sua mão em um totem que a “escaneava” e transformava suas linhas em imagens virtuais que faziam parte da composição do trabalho. Todas as bases eram conectadas e juntavam as imagens geradas formando uma grande “teia” (web em constante construção. <br /><br />\r\nPara a execução do trabalho, os artistas se basearam nos estudos de Pierre Lévy, filósofo francês que analisa a cultura virtual contemporânea. De acordo com o estudioso, as inteligências individuais são adicionadas e compartilhadas com o advento da internet, gerando uma inteligência coletiva. Na obra, Michael e Jeffrey mostram de forma metafórica que essa inteligência coletiva gera uma identidade de toda a sociedade.\r\n', 1, 'Karlsruhe, Alemanha');
 
 --
 -- Indexes for dumped tables
@@ -218,12 +232,12 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `img`
 --
 ALTER TABLE `img`
-  MODIFY `cod_img` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `cod_img` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `obras`
 --
 ALTER TABLE `obras`
-  MODIFY `cod_obra` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `cod_obra` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- Constraints for dumped tables
 --

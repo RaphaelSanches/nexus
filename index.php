@@ -22,6 +22,22 @@
 
 </head>
 <body>
+	<!-- animação da home -->
+	<div class="opening-background">
+		<div class="logo-animation">
+			<audio src="assets/audio/opening.mp3" auto autoplay></audio>
+			<div class="logo-animation-container">
+				<div class="n-nexus">
+					
+				</div>
+				<div class="x-nexus">
+				</div>
+			</div>
+
+			<h1 class="version-text"><span>Arte e Tecnologia:</span> <br />Interligados</h1>
+		</div>
+	</div>
+	<!-- cabeçalho -->
 	<header class="header" role="banner">
 		<div class="container cf">
 			<a href="index.php" title="Nexus - Arte telemática">
@@ -46,7 +62,7 @@
 	<nav class="nav-home ctr">
 		<ul>
 
-			<a href="#" class="nav-home-item">
+			<a href="arte-telematica.php" class="nav-home-item">
 				<img src="assets/img/content/home-menu/arte-telematica.jpg" alt="Arte telemática">
 				<h2>Arte Telemática</h2>
 			</a>
@@ -64,6 +80,10 @@
 			</a>
 		</ul>
 	</nav>
+	
+
+
+
 
 	<script src="src/js/jquery-1.9.1.min.js"></script>
 	<script src="src/js/owl.carousel.js"></script>

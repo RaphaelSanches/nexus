@@ -10,7 +10,7 @@ module.exports = function( grunt ) {
     
     	my_target : {
     		files : {
-          'assets/js/script-min.js' : ['src/js/scripts.js'], // arquivo minificado [ arquivo original]
+          'assets/js/script-min.js' : ['src/js/*.js'], // arquivo minificado [ arquivo original]
     		}
     	}
     },
@@ -24,6 +24,7 @@ module.exports = function( grunt ) {
 
         tasks : [
           'stylus',
+          'uglify',
           // 'imagemin'
         ]
 

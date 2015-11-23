@@ -1,5 +1,5 @@
 <?php
-	$titlePage = 'Artistas';
+	$titlePage = 'O Projeto Nexus';
 	include "header-interno.php";
 
 
@@ -23,7 +23,6 @@
 			<p>
 
 Este site foi publicado e é mantido pelos alunos do 2º período do curso de DESIGN DIGITAL da Universidade Anhembi Morumbi visando a atender às exigências do Projeto Interdisciplinar. Trata-se de uma publicação temporária para propósitos estritamente acadêmicos e sem fins lucrativos. Em atendimento às exigências da Lei 9.610/98 e do parágrafo 4° do Artigo 184 do Código Penal os alunos responsáveis por esta publicação colocam-se à disposição, através do link abaixo, para dirimir qualquer dúvida referente à eventual violação de direitos autorais, comprometendo-se desde já, a retirar do ar qualquer texto, som ou imagem pertencente a autor ou titular que se sinta direta ou indiretamente prejudicado.</p>
-
 		</div>
 
 	</section>

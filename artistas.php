@@ -4,7 +4,7 @@
 
 
 	//Guarda os resultados em uma variável
-	$artistas_result = mysql_query("SELECT autor.cod_autor, autor.nome, autor.local_nasc, autor.data_nasc, autor.img_url FROM autor ") or die(mysql_error());
+	$artistas_result = mysql_query("SELECT autor.cod_autor, autor.nome, autor.local_nasc, autor.data_nasc, autor.img_url FROM autor ORDER BY autor.cod_autor DESC ") or die(mysql_error());
 	//define o título da página
 ?>
 
@@ -17,8 +17,12 @@
 				//Fetch_array se torna falso quando não houver mais linhas 
 				while($row = mysql_fetch_array($artistas_result)) { 
 				?>
-						<li class="artistas-list-item">
-							<a href="artista-individual.php?cod_autor=<?php echo $row['cod_autor'] ?>"><img src="assets/img/content/autor/<?php echo $row['img_url'] ?>" alt=""></a>
+						<li class="artistas-list-item glitch">
+							<a href="artista-individual.php?cod_autor=<?php echo $row['cod_autor'] ?>">
+								<div class="img-container">
+									<img src="assets/img/content/autor/<?php echo $row['img_url'] ?>" alt="">
+								</div>
+							</a>
 							<a href="artista-individual.php?cod_autor=<?php echo $row['cod_autor'] ?>"><h3><?php echo $row['nome'] ?></h3></a>
 							<div class="info-list-item">
 								<p>// <?php echo $row['local_nasc'] ?></p>

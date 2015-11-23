@@ -4,7 +4,7 @@
 
 
 	//Guarda os resultados em uma variável
-	$experimentos_result = mysql_query("SELECT obras.nome, obras.cod_obra, img.img_url, img.cod_obra, img.destaque FROM obras RIGHT JOIN img ON img.cod_obra = obras.cod_obra WHERE img.destaque = 1 ") or die(mysql_error());
+	$experimentos_result = mysql_query("SELECT obras.nome, obras.cod_obra, img.img_url, img.cod_obra, img.destaque FROM obras RIGHT JOIN img ON img.cod_obra = obras.cod_obra WHERE img.destaque = 1 ORDER BY obras.cod_obra DESC") or die(mysql_error());
 	//define o título da página
 ?>
 

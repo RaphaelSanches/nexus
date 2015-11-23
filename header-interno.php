@@ -4,9 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script src="src/js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="src/js/jquery.fancybox.pack.js"></script>
-	<script type="text/javascript">$(".wrap-img").fancybox({		'overlayShow'	:	true, 'openEffect' : 'fade' });</script>
+	<script type="text/javascript"src="assets/js/script-min.js"></script>
 	<?php
 		include "config.php";
 		// linha que estabelece a conexão
@@ -34,19 +32,19 @@
 			<!-- menu -->
 			<nav role="navigation" class="nav-main">
 				<ul role="menubar">
-					<li class="nav-main-item" role="presentation">
+					<li class="nav-main-item glitch" role="presentation">
 						<a href="index.php" role="menuitem">//home</a>
 					</li>
-					<li class="nav-main-item" role="presentation">
+					<li class="nav-main-item glitch" role="presentation">
 						<a href="arte-telematica.php" role="menuitem">//arte telemática</a> 
 					</li>
-					<li class="nav-main-item" role="presentation">
+					<li class="nav-main-item glitch" role="presentation">
 						<a href="artistas.php" role="menuitem">//artistas</a>
 					</li>
-					<li class="nav-main-item" role="presentation">
+					<li class="nav-main-item glitch" role="presentation">
 						<a href="experimentos.php">//experimentos</a>
 					</li>
-					<li class="nav-main-item" role="presentation">
+					<li class="nav-main-item glitch" role="presentation">
 						<a href="o-nexus.php" role="menuitem">//o nexus</a>
 					</li>
 				</ul>
